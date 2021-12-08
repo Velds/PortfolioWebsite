@@ -1,13 +1,16 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import './index.css';
-
+import Profile from './PortfolioContainer/Home/Profile';
+import Header from './PortfolioContainer/Header/Header';
+import Resume from './PortfolioContainer/Resume/Resume';
 function App() {
   return (
-    <div className="App h-full w-full">
-      <div className="bg-blue-900 h-full w-full">
-        <button className="bg-blue-500 text-white font-bold rounded px-2 py-2 hover:bg-blue-400">Testing</button>
-      </div>
+    <div className="App">
+      <Header />
+      <Profile />
+      <Resume />
+      <div className="mt-24">Hai</div>
     </div>
   );
 }
