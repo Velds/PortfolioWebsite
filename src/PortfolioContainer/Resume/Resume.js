@@ -1,34 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Resume.css'
 import Resume_item from './Resume_item/Resume_item'
 
 
 
+
+
 class Resume extends React.Component {
     // Active Tab: 0 - Work | 1 - Extra | 2 - Proj
-
     constructor(props){
         super(props)
-        this.state = {activeTab: 0, workTab: 0, extraTab: 0, projectTab: 0};
+        this.state = {
+            activeTab: 0,
+            workTab: 0,
+            extraTab: 0,
+            projectTab: 0
+        }
     }
-    
 
-    chooseActive(idx){ 
-        this.state.activeTab = Number(idx); 
-        console.log("choosing idx ", this.state.activeTab);
-        console.log("similarities ", idx == 0, idx == 1, idx == 2);
-    }
+
+    chooseActive(idx){
+        this.setState({
+            activeTab: idx 
+        }); 
+    };
 
     chooseWork(idx){
-        this.state.workTab = Number(idx); 
+        console.log("chooseWork", idx);
+        this.setState({
+            workTab: idx 
+        }); 
     }
 
     chooseExtra(idx){
-        this.state.extraTab = Number(idx);
+        this.setState({
+            extraTab: idx
+        });
     }
 
     chooseProj(idx){
-        this.state.projectTab = idx; 
+        this.setState({
+            projectTab: idx 
+        }); 
     }
 
     render(){
@@ -45,25 +58,25 @@ class Resume extends React.Component {
                         <div className={`px-2 ${this.state.activeTab == 1 ? "menu-active" : ""}`} onClick={() => this.chooseActive(1)}> Extracurricular</div>
                         <div className={`px-2 ${this.state.activeTab == 2 ? "menu-active" : ""}`} onClick={() => this.chooseActive(2)}>Project</div>
                     </div>
-                    <div className="flex border-2 border-black rounded">
-                        <div className={`selection-container w-1/2 flex flex-col p-5 relative ${this.state.activeTab == 0 ? "" : "hidden"}`} id="work" >
+                    <div className="flex border-2 border-black rounded resume-container">
+                        <div className={`selection-container w-1/2 flex flex-col p-5 relative ${this.state.activeTab === 0 ? "" : "hidden"}`} id="work" >
+                            <Resume_item onChildClick={() => this.chooseWork(0)} title="iPYGG Fintech Group Limited" subtitle="Full Stack Developer in Research &#38; Development" status={this.state.workTab === 0 ? true : false} period="July 2021 - Dec 2021"></Resume_item>
+                            <Resume_item onChildClick={() => this.chooseWork(1)} title="PT Indonesia Global Solusindo" subtitle="Application Developer" status={this.state.workTab == 1 ? true : false} period="July 2020 - Dec 2020"></Resume_item>
+                            <Resume_item onChildClick={() => this.chooseWork(2)} title="PolyU Service Learning and Leadership Office" subtitle="– Student Assistant" status={this.state.workTab == 2 ? true : false} period="Aug 2020"></Resume_item>
+                        </div>
+                        <div className={`selection-container w-1/2 flex flex-col p-5 relative ${this.state.activeTab === 1 ? "" : "hidden"}`} id="extra">
                             <Resume_item title="iPYGG Fintech Group Limited" subtitle="Full Stack Developer in Research &#38; Development" status={true} period="July 2021 - Dec 2021"></Resume_item>
                             <Resume_item title="PT Indonesia Global Solusindo   " subtitle=" Application Developer" status={false} period="July 2020 - Dec 2020"></Resume_item>
                             <Resume_item title="PolyU Service Learning and Leadership Office" subtitle="– Student Assistant" status={false} period="Aug 2020"></Resume_item>
                         </div>
-                        <div className={`selection-container w-1/2 flex flex-col p-5 relative ${this.state.activeTab == 1 ? "" : "hidden"}`} id="extra">
-                            <Resume_item title="iPYGG Fintech Group Limited" subtitle="Full Stack Developer in Research &#38; Development" status={true} period="July 2021 - Dec 2021"></Resume_item>
-                            <Resume_item title="PT Indonesia Global Solusindo   " subtitle=" Application Developer" status={false} period="July 2020 - Dec 2020"></Resume_item>
-                            <Resume_item title="PolyU Service Learning and Leadership Office" subtitle="– Student Assistant" status={false} period="Aug 2020"></Resume_item>
-                        </div>
-                        <div className={`selection-container w-1/2 flex flex-col p-5 relative ${this.state.activeTab == 2 ? "" : "hidden"}`} id="proj">
+                        <div className={`selection-container w-1/2 flex flex-col p-5 relative ${this.state.activeTab === 2 ? "" : "hidden"}`} id="proj">
                             <Resume_item title="iPYGG Fintech Group Limited" subtitle="Full Stack Developer in Research &#38; Development" status={true} period="July 2021 - Dec 2021"></Resume_item>
                             <Resume_item title="PT Indonesia Global Solusindo   " subtitle=" Application Developer" status={false} period="July 2020 - Dec 2020"></Resume_item>
                             <Resume_item title="PolyU Service Learning and Leadership Office" subtitle="– Student Assistant" status={false} period="Aug 2020"></Resume_item>
                         </div>
                         <div className="experiences-container w-1/2">
                             {/* Work experience tab */}
-                            <div className={`experience-text h-full flex items-center`}  id="work-1">
+                            <div className={`experience-text h-full flex items-center ${this.state.workTab ===  0 ? "" : "hidden"}`}  id="work-1">
                                 <ul className='experience-ul'>
                                     <li>Participated in Creating, Maintaining, and Executing PHP admin Server and its’ API with HMVC
                                     architecture with CodeIgniter</li>
@@ -77,7 +90,7 @@ class Resume extends React.Component {
                                     <li>Mastered and taught engineering group’s best practices and standard </li>
                                 </ul>
                             </div>
-                            <div className={"experience-text h-full flex items-center hidden"} id="work-2">
+                            <div className={`experience-text h-full flex items-center ${this.state.workTab ===  1 ? "" : "hidden"}`} id="work-2">
                                 <ul className="experience-ul">
                                     <li>Migrating the company dashboard for internal resource management that are used by the
         company for internal managements with the next framework version</li>
@@ -86,7 +99,7 @@ class Resume extends React.Component {
                                     <li>Collaborated with colleagues remotely using zoom meetings</li> 
                                 </ul>
                             </div>
-                            <div className={`experience-text h-full flex items-center hidden`} id="work-3">
+                            <div className={`experience-text h-full flex items-center ${this.state.workTab ===  2 ? "" : "hidden"}`} id="work-3">
                                 <ul className="experience-ul">
                                     <li>Assisted in changing and developing the course website that is hosted on KEEP education website that are
     used by the school service learning courses</li>
@@ -111,7 +124,7 @@ class Resume extends React.Component {
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }
 
