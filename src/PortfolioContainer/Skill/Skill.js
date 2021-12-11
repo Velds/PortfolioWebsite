@@ -13,8 +13,8 @@ export default function Skill() {
     return (
         <div className="mt-24">
             Hey?
-            <skillSquare color="#000">
-                <skillItem name="testing" color="red" />
+            <skillSquare>
+                <skillItem />
             </skillSquare>
         </div>
     )
