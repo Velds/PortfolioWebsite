@@ -1,0 +1,8 @@
+.skill-main-container{
+    display: flex; 
+    height: 400px;
+}
+
+.skill-decor{
+    height: 300px;
+}

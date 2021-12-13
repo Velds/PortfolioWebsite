@@ -2,13 +2,22 @@ import { useRef } from 'react';
 import { useDrag, useDrop } from 'react-dnd';
 
 const style = {
-    border: '1px dashed gray',
     padding: '0.5rem 1rem',
     marginBottom: '.5rem',
-    backgroundColor: 'white',
     cursor: 'move',
+    borderRadius: '7px'
 };
-export const Card = ({ id, text, index, moveCard }) => {
+
+const blackStyle ={ 
+    border: '2px solid black',
+    backgroundColor: 'white'
+}
+
+const whiteStyle = {
+    border: '2px solid white',
+    backgroundColor: 'black'
+};
+export const Card = ({ id, text, index, moveCard, color }) => {
     const ItemTypes = {
         CARD: 'card',
       }
@@ -71,7 +80,7 @@ export const Card = ({ id, text, index, moveCard }) => {
     });
     const opacity = isDragging ? 0 : 1;
     drag(drop(ref));
-    return (<div ref={ref} style={{ ...style, opacity }} data-handler-id={handlerId}>
+    return (<div className={`mx-2 w-3/4 text-md flex items-center justify-center border-2 ${index % 2 == 0  ? "border-white bg-black text-white" : "border-black bg-white text-black"}`} ref={ref} style={{ ...style, opacity, }} data-handler-id={handlerId}>
 			{text}
 		</div>);
 };

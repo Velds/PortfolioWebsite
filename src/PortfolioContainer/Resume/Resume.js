@@ -77,7 +77,7 @@ export default function Resume() {
                     <span className="primary-text text-right font-bold text-3xl">Portfolio <br /> </span>
                     <span className="resume-paragraph">Here is my experiences that I want to showcase! </span>
                 </div>
-                <div className="px-10 py-6 mr-1/2">
+                <div className="pl-24 pr-10 py-6 mr-1/2">
                     <div className="menu-resume flex relative ">
                         <div className={`px-2 ${state.activeTab === 0 ? "menu-active" : ""}`} onClick={() => chooseActive(0)}>Work</div>
                         <div className={`px-2 ${state.activeTab === 1 ? "menu-active" : ""}`} onClick={() => chooseActive(1)}> Extracurricular</div>
