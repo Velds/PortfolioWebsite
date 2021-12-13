@@ -71,32 +71,33 @@ export default function Resume() {
 
     
         return (
-            <div className="w-full mt-24 flex flex-col">
-               
-                <div className="Resume-title text-right pr-24">
-                    <span className="primary-text text-right font-bold text-3xl">Portfolio <br /> </span>
-                    <span className="resume-paragraph">Here is my experiences that I want to showcase! </span>
-                </div>
-                <div className="pl-24 pr-10 py-6 mr-1/2">
-                    <div className="menu-resume flex relative ">
-                        <div className={`px-2 ${state.activeTab === 0 ? "menu-active" : ""}`} onClick={() => chooseActive(0)}>Work</div>
-                        <div className={`px-2 ${state.activeTab === 1 ? "menu-active" : ""}`} onClick={() => chooseActive(1)}> Extracurricular</div>
-                        {/* <div className={`px-2 ${state.activeTab === 2 ? "menu-active" : ""}`} onClick={() => chooseActive(2)}>Project</div> */}
+            <section id="portfolio">
+                <div className="w-full mt-24 flex flex-col">
+                    <div className="Resume-title text-right pr-24">
+                        <span className="primary-text text-right font-bold text-3xl">Portfolio <br /> </span>
+                        <span className="resume-paragraph">Here is my experiences that I want to showcase! </span>
                     </div>
-                    <div className="flex border-2 border-black rounded resume-container">
-                        <div className={`selection-container w-full flex p-5 relative overflow-auto justify-center ${state.activeTab === 0 ? "" : "hidden"}`} id="work" >
-                            {resumeCards.workCards.map((card) => (
-                                <FlipCard key={card.id} card={card} />
-                            ))} 
+                    <div className="pl-24 pr-10 py-6 mr-1/2">
+                        <div className="menu-resume flex relative ">
+                            <div className={`px-2 ${state.activeTab === 0 ? "menu-active" : ""}`} onClick={() => chooseActive(0)}>Work</div>
+                            <div className={`px-2 ${state.activeTab === 1 ? "menu-active" : ""}`} onClick={() => chooseActive(1)}> Extracurricular</div>
+                            {/* <div className={`px-2 ${state.activeTab === 2 ? "menu-active" : ""}`} onClick={() => chooseActive(2)}>Project</div> */}
                         </div>
-                        <div className={`selection-container w-full flex p-5 relative justify-center ${state.activeTab === 1 ? "" : "hidden"}`} id="extra">
-                        {resumeCards.extraCurricular.map((card) => (
-                                <FlipCard key={card.id} card={card} />
-                            ))} 
+                        <div className="flex border-2 border-black rounded resume-container">
+                            <div className={`selection-container w-full flex p-5 relative overflow-auto justify-center ${state.activeTab === 0 ? "" : "hidden"}`} id="work" >
+                                {resumeCards.workCards.map((card) => (
+                                    <FlipCard key={card.id} card={card} />
+                                ))} 
+                            </div>
+                            <div className={`selection-container w-full flex p-5 relative justify-center ${state.activeTab === 1 ? "" : "hidden"}`} id="extra">
+                            {resumeCards.extraCurricular.map((card) => (
+                                    <FlipCard key={card.id} card={card} />
+                                ))} 
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         );
     
 }

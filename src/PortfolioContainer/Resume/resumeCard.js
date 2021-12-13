@@ -58,14 +58,42 @@ const resumeCards =  {
             id: "4", 
             variant: "click", 
             front: {
-                title: "PT Indonesia Global Solusindo",
-                subtitle: "Application Develope",
-                period: "July 2020 - Dec 2020"
+                title: "AIESEC in PolyU",
+                subtitle: "Finance and Information Management Officer",
+                period: "Oct 2019 – Jul 2020"
             },
             back: [
-            `Assisted in changing and developing the course website that is hosted on KEEP education website that are
-            used by the school service learning courses`,
-            `Design implementation with HTML CSS`,
+            `Developed a Local Committee website through that is hosted on Wordpress`,
+            `Data analysis on AIESEC product through the usage of pivot table and charts on excel and google
+            sheet`,
+            ]
+        },
+        {
+            id: "5", 
+            variant: "click", 
+            front: {
+                title: "Melco Student Challenge 2019",
+                subtitle: "Semifinalist",
+                period: "March 2020" 
+            },
+            back: [
+            `Sustainable & environmental innovation category`,
+            `Our solution was to integrate saved resources and hotel facilities to encourage energy saving
+            behavior`,
+            ]
+        },
+        {
+            id: "6", 
+            variant: "click", 
+            front: {
+                title: "Hackathons",
+                subtitle: "Hackathon participated",
+                period: "--" 
+            },
+            back: [
+            `SCMP Classified Post 2019`,
+            `PwC HackaDay 2020`,
+            `Code For Good (J.P Morgan & Chase) 2021`
             ]
         }
     ]

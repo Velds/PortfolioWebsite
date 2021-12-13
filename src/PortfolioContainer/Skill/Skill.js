@@ -32,23 +32,25 @@ export default function Skill() {
 
 
     return (<>
-    <div className="skill-main-container">
-        <div className="flex flex-col w-1/2">
-            <div className="Resume-title text-left pl-24 flex flex-col mb-10">
-                <span className="primary-text text-left font-bold text-3xl">Skill</span>
-                <span className="resume-paragraph">Language that I use and am confident in</span>
-                <span className="text-xs">You can rearrange the skill by drag and drop :)</span>
+    <section id="skill">
+        <div className="skill-main-container mt-24">
+            <div className="flex flex-col w-1/2">
+                <div className="Resume-title text-left pl-24 flex flex-col mb-10">
+                    <span className="primary-text text-left font-bold text-3xl">Skill</span>
+                    <span className="resume-paragraph">Language that I use and am confident in</span>
+                    <span className="text-xs">You can rearrange the skill by drag and drop :)</span>
+                </div>
+                <div className="pl-24">
+                    <DndProvider backend={HTML5Backend}>
+                            <div className="grid grid-cols-3">{cards.map((card, i) => renderCard(card, i))}</div>
+                    </DndProvider>
+                </div>
             </div>
-            <div className="pl-24">
-                <DndProvider backend={HTML5Backend}>
-                        <div className="grid grid-cols-3">{cards.map((card, i) => renderCard(card, i))}</div>
-                </DndProvider>
+            <div className="flex w-1/2 justify-center items-center py-24">
+                <img className="skill-decor" src={decoration} alt={"decoration-1"} />
             </div>
         </div>
-        <div className="flex w-1/2 justify-center items-center py-24">
-            <img className="skill-decor" src={decoration} alt={"decoration-1"} />
-        </div>
-    </div>
+    </section>
 			</>);
 
 }

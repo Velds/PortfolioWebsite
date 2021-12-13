@@ -46,12 +46,12 @@ const skillList = [
     },
     {
         id: 10, 
-        text :'CSS',
+        text :'SA/CSS',
         color: false
     },
     {
         id: 11, 
-        text :'SASS',
+        text :'SQL',
         color: true
     },
     {

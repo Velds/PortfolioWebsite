@@ -41,8 +41,8 @@ export default function FlipCard({card}) {
                 <div className="card back overflow-hidden border-2 border-black rounded">
                     <div className="card-body flex justify-center items-center">
                         <ul className="card-text text-sm text-left px-5 mt-10 ">
-                        {card.back.map((item) => (
-                                <li className="my-2"> {item} </li>
+                        {card.back.map((item, index) => (
+                                <li key={index} className="my-2"> {item} </li>
                         ))} 
                         </ul>
                     {/* <p className="card-text text-xl font-bold">{card.back.map}</p> */}
