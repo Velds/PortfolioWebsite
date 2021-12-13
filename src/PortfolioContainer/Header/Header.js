@@ -32,7 +32,7 @@ export default function Header() {
                 setActiveSection(0);
             }
 
-            console.log("active section", activeSection, " height: ", windowHeight);
+            // console.log("active section", activeSection, " height: ", windowHeight);
             windowHeight > 100 ? setStickyClass('fixed top-3 left-0 z-50') : setStickyClass('relative');
         }
     };
