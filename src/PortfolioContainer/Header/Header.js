@@ -9,10 +9,10 @@ export default function Header() {
                 Nic
             </div>
             <div className="header-container flex justify-center w-100  text-m font-bold ">
-                <a href="#" className="uppercase px-2 hover:bg-gray-100 active-header">About</a>
-                <a href="#" className="uppercase px-2 hover:bg-gray-100" >Portfolio</a>
-                <a href="#" className="uppercase px-2 hover:bg-gray-100">Skill</a>
-                <a href="#" className="uppercase px-2 hover:bg-gray-100">Lab</a>
+                <a href="#" className="uppercase px-2 active-header header-menu">About</a>
+                <a href="#" className="uppercase px-2 header-menu" >Portfolio</a>
+                <a href="#" className="uppercase px-2 header-menu">Skill</a>
+                <a href="#" className="uppercase px-2 header-menu">Lab</a>
             </div>
             <div className="socialMedia flex items-center">
                 <a href="#" className="text-xl px-2"><FaLinkedin /></a>
