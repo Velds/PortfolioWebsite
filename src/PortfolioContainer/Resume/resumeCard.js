@@ -18,7 +18,7 @@ const resumeCards =  {
             (iPYGG)`,
             `Collaborated in a team of 5 to deliver the company main product and the company’s B2B
             functions.`,
-            `Experienced with implementing wireframes to a real design from designer software (e.g., Figma)`,
+            `Implemented more than 50 pages from Figma into a functional, mobile application`,
             `Mastered and taught engineering group’s best practices and standard`
             ]
         },
@@ -31,8 +31,7 @@ const resumeCards =  {
                 period: "July 2020 - Dec 2020"
             },
             back: [
-            `Migrating the company dashboard for internal resource management that are used by the
-            company for internal managements with the next framework version`,
+            `Migrating internal company dashboard for resource management to a newer CodeIgniter PHP version`,
             `Internal Database migration to a new framework version using MySQL`,
             `Redesigned and coded the Company internal dashboard with HTML Bootstrap and CSS`,
             `Collaborated with colleagues remotely using zoom meetings`,
@@ -47,8 +46,7 @@ const resumeCards =  {
                 period: "Aug 2020"
             },
             back: [
-            `Assisted in changing and developing the course website that is hosted on KEEP education website that are
-            used by the school service learning courses`,
+            `Implemented more than 40 school course related pages using HTML and Javascript that is powered by KEEP, an online learning platform`,
             `Design implementation with HTML CSS`,
             ]
         }
